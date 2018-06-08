@@ -48,7 +48,7 @@ var Balloon = function () {
           media: this.progress % 20 == 1 ? 1 : 0
         }));
         this.progress++;
-      }.bind(this), 120);
+      }.bind(this), 220);
     }
   }, {
     key: "update",
@@ -77,11 +77,11 @@ var Particle = function () {
     this.container = container;
     this.destroy = false;
     this.a = [0.5, 1, 2, 0.3, 3][Math.floor(Math.random() * 4)];
-    this.steps = $(window).width() / 4;
+    this.steps = $(window).width() / 10;
     this.rotation = Math.random() > 0.5 ? "-" : "+";
     this.scale = 0.5 * Math.random();
     this.oscillo = 50 + Math.random() * 70;
-    this.siner = 100 * Math.random();
+    this.siner = 10 * Math.random();
     this.speed = options.speed;
     this.progress = 0;
     this.texture = media[options.media];
