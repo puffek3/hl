@@ -44,11 +44,11 @@ var Balloon = function () {
 
       this.interval = setInterval(function () {
         this.particles.push(new Particle(this.app, container, {
-          speed: 1 + Math.random() * 5,
-          media: this.progress % 20 == 1 ? 1 : 0
+          speed: 1 + Math.random() * 4,
+          media: this.progress % 10 == 1 ? 1 : 0
         }));
         this.progress++;
-      }.bind(this), 6);
+      }.bind(this), 60);
     }
   }, {
     key: "update",
@@ -77,7 +77,7 @@ var Particle = function () {
     this.container = container;
     this.destroy = false;
     this.a = [0.5, 1, 2, 0.3, 3][Math.floor(Math.random() * 4)];
-    this.steps = $(window).width() / 8;
+    this.steps = $(window).width() / 4;
     this.rotation = Math.random() > 0.5 ? "-" : "+";
     this.scale = 0.5 * Math.random();
     this.oscillo = 50 + Math.random() * 70;
